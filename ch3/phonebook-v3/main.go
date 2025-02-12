@@ -27,10 +27,11 @@ var data = []Entry{}
 var index map[string]int
 
 func readCSVFile() error {
-	f, err := os.OpenFile(CSVFILE, os.O_APPEND|os.O_CREATE|os.O_RDWR, 0644)
+	f, err := os.OpenFile(CSVFILE, os.O_CREATE|os.O_RDONLY, 0644)
 	if err != nil {
 		return err
 	}
+	defer f.Close()
 
 	lines, err := csv.NewReader(f).ReadAll()
 	if err != nil {

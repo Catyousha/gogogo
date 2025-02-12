@@ -17,6 +17,7 @@ new things learned from each project:
 * slices
     * array = fixed size, slice = dynamic size
     * slices (golang's dynamic array) has preserved memory (capacity) that doubles when appended over initial size. it must capped by it's final length (`s = s[0:len(s):len(s)]`) to prevent unnecessary bloats.
+    * exercise 1, 2, 3
 
 * pointers
     * pointer = reference to variable. function can update variable through pointer `func(*param) { *param = newValue }`
