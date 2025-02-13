@@ -24,7 +24,7 @@ new things learned from each project:
             * declare `func (var1 *s) modifyField (b int) => var1.field = b`
             * then `s1.modifyField(42); (s1.field == 42) == true`
 
-* sort
+* sort & sortShapes
     * interface == set of requirements to be implemented by data type
     * `sort.Sort` accepts `Interface` as param
         * `sort.Sort(S2Slice{})` == `S2Slice` must implement `Interface` requirement from `sort` package, such as: `Len()`, `Less()`, `Swap()` 
@@ -35,3 +35,9 @@ new things learned from each project:
 
 * typeSwitch
     * apply `.(type)` to `interface{}` as param to check data type and act accordingly.
+
+* shape2d
+    * `interface{}(var1).(TypeA)` is used to check if `var1` is implementation of `TypeA` interface.
+
+* phonebook-v4:
+    * exercise 1 & 3
