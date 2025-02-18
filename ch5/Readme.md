@@ -15,3 +15,7 @@ new things learned from each project:
     * `.github/workflows/main.yml` to setup runner and execute docker
         * there are useful presets for runner (`actions/checkout@v2` & `actions/setup-go@v2`)
     * meanwhile gitlab runner is configured at `gitlab-ci.yml`
+
+* getSchema
+    * exercise 2
+    * fetch db flow: open conn, query data and assign result to variable through reference, iterate each rows, assign each data to variable through reference again.
