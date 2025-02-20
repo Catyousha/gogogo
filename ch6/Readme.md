@@ -23,3 +23,6 @@ new things learned from each project:
 * phonebook-v5
     * simple crud app with cobra cli
     * each files in cmd subpackage has `init()` func, auto running when `cmd.Execute()` is called from `root.go`.
+
+* wc
+    * exercise 1, 3, 8, 9
