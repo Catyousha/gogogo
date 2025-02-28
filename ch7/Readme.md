@@ -39,3 +39,21 @@ new things learned from each project:
 * rwmutex
     * locked value can be protected but allow reading by using `RWMutex.Lock()`
         * and set to writing only / prevent read by `RWMutex.RLock()`
+
+* atomic
+    * `atomic` can be used as alternative to mutex
+    * all r/w operations with multiple goroutines cannot be interrupted.
+    * write example: `atomic.AddInt64(&var, 1)`
+    * read example: `atomic.LoadInt64(&var)`
+
+* useContext
+    * `context` package provides ways to control goroutine execution:
+        * `WithCancel`: allows manual cancellation of context
+        * `WithTimeout`: automatically cancels AFTER specified duration
+        * `WithDeadline`: automatically cancels AT specified time
+    * contexts can be cancelled in multiple ways:
+        * manually via cancel function
+        * timeout expiration 
+        * deadline reached
+    * use `select` with context's `Done()` channel to handle cancellation
+    * always `defer cancel()` to prevent resource leaks
