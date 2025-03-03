@@ -57,3 +57,18 @@ new things learned from each project:
         * deadline reached
     * use `select` with context's `Done()` channel to handle cancellation
     * always `defer cancel()` to prevent resource leaks
+
+* keyVal
+    * store context key in `ctx := context.WithValue(context.Background(), key, value)`
+    * load with `ctx.Value(key)`
+
+* semaphore
+    * semaphore controls how many goroutines can execute simultaneously
+    * unlike WaitGroup which just waits for all goroutines to complete
+    * create a semaphore with `semaphore.NewWeighted(int64(maxWorkers))`
+    * acquire semaphore units before starting a goroutine with `sem.Acquire(ctx, 1)`
+    * release semaphore when goroutine completes with `sem.Release(1)`
+    * wait for all workers to complete by acquiring all semaphore units `sem.Acquire(ctx, int64(maxWorkers))`
+
+* wc
+    * exercise 1-4
