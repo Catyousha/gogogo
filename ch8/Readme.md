@@ -13,3 +13,23 @@ new things learned from each project:
     * separate handlers into different functions for better organization
     * input validation with regex using `regexp.MustCompile`
     * http request workflow: mux routes request to handler -> handler extracts parameters -> validates input -> performs operation (search/insert/delete) on in-memory data -> updates CSV file -> returns response
+
+* metrics
+    * tracks number of active goroutines using runtime metrics
+    * uses `metrics.Sample` to hold metric data
+    * uses `metrics.Read()` to get current metric values (how many processes are running)
+
+* sample-pro
+    * register metrics with `prometheus.MustRegister()`
+    * counter metrics continuously increase with `counter.Add()`
+    * gauge metrics can fluctuate up/down with `gauge.Add()`
+    * histogram metrics show value distribution in buckets with `histogram.Observe()`
+    * summary metrics track count and sum of observations with `summary.Observe()`
+    * expose metrics endpoint with `http.Handle("/metrics", promhttp.Handler())`
+    * metrics can be viewed using curl on /metrics endpoint
+
+* prometheus
+    * basic concept of integration between docker and prometheus + grafana
+    * collect runtime metrics using `metrics.Read()` with specific metric paths
+    * use garbage collection with `runtime.GC()` to manage memory
+    * store metrics in `metrics.sample`, then snapshot it into prometheus with `prometheus.Gauge.Set( float64(getMetric[0].Value.Uint64()) )`
