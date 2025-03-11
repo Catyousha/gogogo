@@ -33,3 +33,17 @@ new things learned from each project:
     * collect runtime metrics using `metrics.Read()` with specific metric paths
     * use garbage collection with `runtime.GC()` to manage memory
     * store metrics in `metrics.sample`, then snapshot it into prometheus with `prometheus.Gauge.Set( float64(getMetric[0].Value.Uint64()) )`
+
+* www-client
+    * exercise 2
+    * create HTTP client with timeout using `http.Client`
+    * parse URL with `url.Parse()`
+    * make GET request with `http.NewRequest()` and client's `Do()`
+    * read response headers with `httputil.DumpResponse()`
+    * check content length with `httpData.ContentLength`
+    * save HTTP response body to file using `io.Copy()`
+    * extract hostname from URL with `URL.Hostname()`
+    * handle HTTP connection cleanup with `defer httpData.Body.Close()`
+
+* simpleab
+    * exercise 4
