@@ -9,6 +9,7 @@ new things learned from each project:
     * write to listened conn (`c.Write(...)`) => send msg to connected client
 
 * conc-tcp
+    * exercise 3
     * tcp server can be served concurrently with goroutine
 
 * udp-c
@@ -22,3 +23,18 @@ new things learned from each project:
 * socket-client & socket-server
     * UNIX domain socket is used for establish communication in same machine.
     * listen & dial through `.socket` file
+
+* ws-s
+    * package `gorilla/websocket` can be used to implement websocket server
+    * initiate websocket by upgrading http writer with `ws := websocket.Upgrader{}.Upgrader(httpWriter, httpReader, nil)`
+    * get msg from client with `msgType, msgContent := ws.ReadMessage()`
+    * write msg to client with `ws.WriteMessage(msgType, text)`
+
+* ws-c
+    * establish websocket connection through `websocket.DefaultDialer.Dial(url, nil)`
+    * read message from server with `ws.ReadMessage()`
+    * write message to server with `ws.WriteMessage(websocket.TextMessage, text)`
+    * handle interrupt signal with `os.Signal` channel and `signal.Notify()`
+    * implement timeout with `time.After()` and `syscall.Kill()`
+
+* exercises 1, 2, 4, 5
