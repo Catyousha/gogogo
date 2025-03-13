@@ -18,3 +18,7 @@ new things learned from each project:
     * UDP address must be resolved through `s := net.ResolveUDPAddr("udp4", addr)` before open to listen with `conn := net.ListenUDP("udp4", s)`
     * read message by dialed client with `conn.ReadFromUDP(assignedVar)`
     * write msg to client with `conn.WriteToUDP(text)`
+
+* socket-client & socket-server
+    * UNIX domain socket is used for establish communication in same machine.
+    * listen & dial through `.socket` file
